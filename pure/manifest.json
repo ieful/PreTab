@@ -24,14 +24,14 @@
     "open_previous_tab": {
       "suggested_key": {
         "default": "Ctrl+Left",
-        "mac": "MacCtrl+Left"
+        "mac": "Command+Left"
       },
       "description": "Open the previous tab"
     },
     "go_previous_tab": {
       "suggested_key": {
         "default": "Ctrl+Up",
-        "mac": "MacCtrl+Up"
+        "mac": "Command+Up"
       },
       "description": "Open the previous tab"
     },
@@ -39,14 +39,14 @@
       "description": "Switch to the next tab",
       "suggested_key": {
         "default": "Ctrl+Right",
-        "mac": "MacCtrl+Right"
+        "mac": "Command+Right"
       }
     },
     "go_next_tab": {
       "description": "Switch to the next tab",
       "suggested_key": {
         "default": "Ctrl+Down",
-        "mac": "MacCtrl+Down"
+        "mac": "Command+Down"
       }
     }
   },
