@@ -4,20 +4,20 @@
   "version": "2.0",
   "description": "open last tab",
   "icons": {
-    "16": "images/get_started16.png",
-    "32": "images/get_started32.png",
-    "48": "images/get_started48.png",
-    "128": "images/get_started128.png"
+    "16": "images/pretab-16.png",
+    "32": "images/pretab-32.png",
+    "48": "images/pretab-48.png",
+    "128": "images/pretab-128.png"
   },
   "background": {
     "service_worker": "background.js"
   },
   "action": {
     "default_icon": {
-      "16": "images/get_started16.png",
-      "32": "images/get_started32.png",
-      "48": "images/get_started48.png",
-      "128": "images/get_started128.png"
+      "16": "images/pretab-16.png",
+      "32": "images/pretab-32.png",
+      "48": "images/pretab-48.png",
+      "128": "images/pretab-128.png"
     }
   },
   "commands": {
