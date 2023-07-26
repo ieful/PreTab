@@ -1,11 +1,7 @@
-chrome.storage.local.get('tabStack', function (data) {
+chrome.storage.local.get(['tabStack', 'popStack'], function (data) {
     if (!data.tabStack) {
         chrome.storage.local.set({ 'tabStack': [] });
     }
-});
-
-
-chrome.storage.local.get('popStack', function (data) {
     if (!data.popStack) {
         chrome.storage.local.set({ 'popStack': [] });
     }
@@ -95,3 +91,24 @@ chrome.action.onClicked.addListener(async () => {
     }
 });
 
+chrome.tabs.onRemoved.addListener(async (tabId, removeInfo) => {
+
+    const data = await getTabStack();
+    const tabStack = data.tabStack;
+    const popData = await getPopStack();
+    const popStack = popData.popStack;
+
+    if (tabStack.map(tab => tab.tabId).includes(tabId)) {
+        tabStack.splice(tabStack.map(tab => tab.tabId).indexOf(tabId), 1);
+        chrome.storage.local.set({ 'tabStack': tabStack });
+    }
+
+    if (popStack.map(tab => tab.tabId).includes(tabId)) {
+        popStack.splice(popStack.map(tab => tab.tabId).indexOf(tabId), 1);
+        chrome.storage.local.set({ 'popStack': popStack });
+    }
+});
+
+chrome.runtime.onSuspend.addListener(async () => {
+    chrome.storage.local.clear();
+});
