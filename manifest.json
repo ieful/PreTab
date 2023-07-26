@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "PreTab",
+  "version": "2.0",
+  "description": "open last tab",
+  "icons": {
+    "16": "images/get_started16.png",
+    "32": "images/get_started32.png",
+    "48": "images/get_started48.png",
+    "128": "images/get_started128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    }
+  },
+  "commands": {
+    "open_previous_tab": {
+      "suggested_key": {
+        "default": "Ctrl+Left",
+        "mac": "MacCtrl+Left"
+      },
+      "description": "Open the previous tab"
+    },
+    "go_previous_tab": {
+      "suggested_key": {
+        "default": "Ctrl+Up",
+        "mac": "MacCtrl+Up"
+      },
+      "description": "Open the previous tab"
+    },
+    "open_next_tab": {
+      "description": "Switch to the next tab",
+      "suggested_key": {
+        "default": "Ctrl+Right",
+        "mac": "MacCtrl+Right"
+      }
+    },
+    "go_next_tab": {
+      "description": "Switch to the next tab",
+      "suggested_key": {
+        "default": "Ctrl+Down",
+        "mac": "MacCtrl+Down"
+      }
+    }
+  },
+  "permissions": ["tabs", "storage", "windows","scripting", "activeTab"]
+}
