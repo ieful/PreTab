@@ -48,14 +48,16 @@ chrome.commands.onCommand.addListener(async function (command) {
     const tabStack = data.tabStack;
     const popData = await getPopStack();
     const popStack = popData.popStack;
-    if (command === "open_previous_tab" || command === "go_previous_tab") {
+    if (command == "open_previous_tab" || command == "go_previous_tab") {
+        console.log('previous command')
         if (tabStack.length >= 2) {
             const previousTabId = tabStack[tabStack.length - 2]
             popStack.push(tabStack.pop());
             chrome.storage.local.set({ 'tabStack': tabStack, 'popStack': popStack });
             chrome.tabs.update(previousTabId, { active: true });
         }
-    } else if (command === "open_next_tab" || command === "go_next_tab") {
+    } else if (command == "open_next_tab" || command == "go_next_tab") {
+        console.log('next command')
         if (popStack.length > 0) {
             const nextTabId = popStack[popStack.length - 1];
             tabStack.push(popStack.pop());
@@ -66,6 +68,7 @@ chrome.commands.onCommand.addListener(async function (command) {
 });
 
 chrome.action.onClicked.addListener(async () => {
+    console.log('previous clicked')
     const data = await getTabStack();
     const tabStack = data.tabStack;
     const popData = await getPopStack();
